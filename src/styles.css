@@ -1,0 +1,115 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Main Styles */
+body {
+  background-color: #f4f4f4;
+  color: #333;
+}
+header {
+  background: #35424a;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+nav {
+  margin: 20px 0;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+nav ul li {
+  display: inline;
+}
+nav ul li a {
+  color: #ffffff;
+  font-weight: bold;
+}
+footer {
+  background: #35424a;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+section {
+  margin-bottom: 20px;
+}
+article {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+h2 {
+  color: #35424a;
+  margin-bottom: 10px;
+}
+p {
+  margin-bottom: 15px;
+}
+
+/************* grid layout *************/
+.container {  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "header header header"
+    "content content content"
+    "content content content"
+    "footer footer footer";
+}
+
+.header { grid-area: header; }
+
+.content { grid-area: main; }
+
+.footer { grid-area: footer; }
