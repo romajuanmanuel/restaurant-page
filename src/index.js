@@ -5,7 +5,7 @@ import loadHome from "./loadHome";
 import loadMenu from "./loadMenu";
 import loadContact from "./loadContact";
 
-import logoPath from './assets/logo.png';
+import logoPath from './assets/logo2.jpg';
 
 document.addEventListener("DOMContentLoaded", () => {
     loadHome();
