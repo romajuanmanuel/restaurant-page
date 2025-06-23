@@ -8,7 +8,6 @@ import logoPath from './assets/logo2.jpg';
 // Variables globales para Google Maps
 export let gmap;
 export const gmapCenter = { lat: -34.6037, lng: -58.3816 };
-let mapScriptInjected = false;
 
 // Callback global que la API de Maps invoca
 window.initMap = function() {
@@ -52,24 +51,10 @@ function initApp() {
     setActiveButton("menu");
   });
 
-    contactBtn.addEventListener("click", () => {
+  contactBtn.addEventListener("click", () => {
     loadContact();
     setActiveButton("contact");
-
-    // Esperar a que el DOM esté actualizado antes de inicializar o refrescar el mapa
-    setTimeout(() => {
-      const mapDiv = document.getElementById('map');
-      if (!mapDiv) return;
-
-      // Destruir el mapa anterior si existe
-      if (gmap) {
-        gmap = null;
-        mapDiv.innerHTML = "";
-      }
-
-      // Inicializar mapa de nuevo
-      window.initMap();
-    }, 100);
+    refreshMap();
   });
 
   // Carga inicial
@@ -91,18 +76,15 @@ function initApp() {
   }
 }
 
-// Inyección única del script de Google Maps y ejecución de la app
 document.addEventListener("DOMContentLoaded", () => {
-  if (!mapScriptInjected) {
+  // Inyecta la API de Google Maps una sola vez
+  if (!document.getElementById('gmaps-script')) {
     const script = document.createElement('script');
     script.id = 'gmaps-script';
     script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCl5BxRk49t26wig7BvE9EWgK8YYjwHvqw&callback=initMap`;
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
-    mapScriptInjected = true;
   }
   initApp();
 });
-
-
