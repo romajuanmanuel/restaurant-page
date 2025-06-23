@@ -1,4 +1,5 @@
-/* CSS Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ html, body {
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  padding: 0.7rem;
 }
 
 a {
@@ -36,21 +38,31 @@ button {
 
 /* Main Styles */
 body {
-  background-color: #f4f4f4;
+  background-color: #fff7fa;
   color: #333;
 }
 header {
-  background: #35424a;
+  background: #f3ecf9;
   color: #ffffff;
   padding: 20px 0;
-  text-align: center;
 }
 header h1 {
   margin: 0;
   font-size: 2.5em;
 }
-nav {
-  margin: 20px 0;
+.header nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+  margin-top: 1.2em;
+}
+
+.header button {
+  width: auto; /* Para que el botón ocupe toda la celda */
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
 }
 nav ul {
   display: flex;
@@ -65,7 +77,7 @@ nav ul li a {
   font-weight: bold;
 }
 footer {
-  background: #35424a;
+  background: #f3ecf9;
   color: #ffffff;
   text-align: center;
   padding: 10px 0;
@@ -77,6 +89,7 @@ main {
   padding: 20px;
   max-width: 800px;
   margin: auto;
+  background-color: #fef4ec;
 }
 section {
   margin-bottom: 20px;
@@ -96,20 +109,76 @@ p {
 }
 
 /************* grid layout *************/
+
 .container {  display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    "header header header"
+    "logo header header"
     "content content content"
     "content content content"
     "footer footer footer";
 }
 
+.footer { grid-area: footer; }
+
+.logo { grid-area: logo; }
+
 .header { grid-area: header; }
 
-.content { grid-area: main; }
+#content { grid-area: content; }
 
-.footer { grid-area: footer; }
+
+
+/**********************************/
+/* CSS */
+
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color:#f3ecf9;}
+.logo img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
+button {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7d9e3; /* rosa pastel */
+  color: #4a4a4a; /* gris oscuro */
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #fbeaf0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+button.active {
+  background-color: #dba5b3; /* un rosa más fuerte */
+  color: white;
+  font-weight: bold;
+}
+
+.logo-img {
+  border: 1px solid red;
+}
+
+.tab-content {
+  background-color: #c98c5a; /* color de fondo claro */
+  border: 1px solid #dba5b3; /* borde rosa */
+  border-radius: 8px;
+} 
+

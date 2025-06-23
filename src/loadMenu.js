@@ -1,10 +1,10 @@
-// src/home.js
+//src/loadMenu.js
 export default function loadMenu() {
     const content = document.getElementById('content');
-    content.innerHTML = ''; // Limpiar contenido anterior
+    content.innerHTML = ''; 
   
     const container = document.createElement('div');
-    container.classList.add('tab-content');
+    container.classList.add('content');
   
     const title = document.createElement('h1');
     title.textContent = 'Menu ';

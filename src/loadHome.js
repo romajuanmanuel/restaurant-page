@@ -1,13 +1,14 @@
-// src/home.js
+
+// src/loadHome.js
 export default function loadHome() {
   const content = document.getElementById('content');
-  content.innerHTML = ''; // Limpiar contenido anterior
+  content.innerHTML = ''; 
 
   const container = document.createElement('div');
-  container.classList.add('tab-content');
+  container.classList.add('content');
 
   const title = document.createElement('h1');
-  title.textContent = 'Welcome ';
+  title.textContent = 'Home ';
 
   const paragraph = document.createElement('p');
   paragraph.textContent = 'Enjoy the best dishes in town.';
